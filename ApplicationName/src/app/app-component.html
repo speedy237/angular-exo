@@ -1,4 +1,4 @@
-<h1>
+<h1 class="center">
     La liste des Etudiants
 </h1>
 <input
@@ -6,7 +6,26 @@
   (keyup)="selectOneStudent(boxInput.value)"
   type="number"
 />
-<p *ngIf="studentSelected">{{studentSelected.name}}</p>
-<p *ngIf="!studentSelected">pas d'Etudiant</p>
-<p *ngFor="let student of studentList">{{student.name}}</p>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let student of studentList">
+      <div class="card horizontal">
+        <div class="card-image">
+          <img [src]="student.picture">
+        </div>
+        <div class="card-starked">
+          <div class="card-content">
+            <p>{{student.name}}</p>
+            <p><span>{{student.joinDate}}</span></p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
  

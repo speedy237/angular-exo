@@ -1,0 +1,40 @@
+<nav class="">
+    <div class="nav-wrapper">
+         
+        <h1 class="center">
+            Liste des Etudiants Ecole-IT
+       </h1>
+  </div>
+    
+</nav>
+
+<input
+  #boxInput
+  (keyup)="selectOneStudent(boxInput.value)"
+  type="number"
+/>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let student of studentList"  class="col m4 s6">
+      <a routerLink="/detail-students/{{student.id}}">
+      <div BorderCard  class="card horizontal" >
+        <div class="card-image">
+          <img class="tiny" [src]="student.picture">
+        </div>
+        <div class="card-starked">
+          <div class="card-content">
+            <p>{{student.name}}</p>
+            <p><span>{{student.joinDate | date:"dd/MM/yyyy"}}</span></p>
+
+          </div>
+        </div>
+
+      </div>
+    </a>
+
+    </div>
+
+  </div>
+
+</div>
+ 

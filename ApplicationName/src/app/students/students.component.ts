@@ -1,23 +1,28 @@
-import { Component, OnInit} from '@angular/core';
-import {Student} from './Student'
-import { STUDENTS } from './mock-student-list';
+import { Component, OnInit } from '@angular/core';
+import {Student} from '../Student'
+import { STUDENTS } from '../mock-student-list';
 import { Router } from '@angular/router';
-import {NgForm} from '@angular/forms'
+
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app-component.html',
-  styles: []
+  selector: 'app-students',
+  templateUrl: 'students.html',
+  styles: [
+  ]
 })
-export class AppComponent implements OnInit {
+export class StudentsComponent implements OnInit {
+
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+    console.table(this.studentList);
+      console.table(this.studentList[0].name);
+  }
+
+
   idStudent: number;
   studentList: Student[]=STUDENTS;
   studentSelected: Student|undefined;
-  constructor(private router: Router) { }
-   ngOnInit(): void {
-      //console.table(this.studentList);
-      //console.table(this.studentList[0].name);
-   }
-   /*selectStudent=(event: MouseEvent) => {
+   selectStudent=(event: MouseEvent) => {
     const index:number=+ (event.target as HTMLInputElement).value;
     console.log(`vous avez clique sur l'etudiant ${this.studentList[index].name}`)
    }
@@ -34,5 +39,6 @@ export class AppComponent implements OnInit {
       console.log("l'etudiant n'existe pas");
      }
 
-  }*/
+  }
+
 }

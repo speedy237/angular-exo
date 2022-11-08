@@ -1,0 +1,36 @@
+<nav class="">
+    <div class="nav-wrapper">
+         
+        <h1 class="center">
+            Information Etudiants
+       </h1>
+       <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a routerLink="/students">Home</a></li>
+      </ul>
+  </div>
+    
+</nav>
+<div class="">
+<div BorderCard  class="card horizontal" >
+    <div class="card-image">
+      <img class="tiny" [src]="student.picture">
+    </div>
+    <div class="card-starked">
+      <div class="card-content">
+        <p>Name: {{student.name}}</p>
+        <p>Sexe: {{student.sexe}}</p>
+        <p>Age: {{student.age}}</p>
+        <p><span>Join Date: {{student.joinDate | date:"dd/MM/yyyy"}}</span></p>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="waves-effect waves-light btn">
+    <button  routerLink="/students" class="material-icons center">
+        Back Home
+      </button>
+
+  </div>
+ 
+</div>

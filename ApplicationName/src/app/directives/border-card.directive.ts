@@ -8,7 +8,7 @@ export class BorderCardDirective {
   constructor(private el:ElementRef) { 
     this.setBorder('#f5f5f5');
   }
-  @Input('studentBorderCard') borderColor: string;
+  @Input('BorderCard') borderColor: string;
   @HostListener('mouseenter')  onMouseEnter(){
     this.setBorder(this.borderColor || '#009688');
   }

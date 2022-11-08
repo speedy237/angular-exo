@@ -1,0 +1,12 @@
+<h1>
+    La liste des Etudiants
+</h1>
+<input
+  #boxInput
+  (keyup)="selectOneStudent(boxInput.value)"
+  type="number"
+/>
+<p *ngIf="studentSelected">{{studentSelected.name}}</p>
+<p *ngIf="!studentSelected">pas d'Etudiant</p>
+<p *ngFor="let student of studentList">{{student.name}}</p>
+ 

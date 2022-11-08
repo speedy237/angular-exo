@@ -2,10 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { CouleursDirective } from './directives/couleurs.directive';
+import { BorderCardDirective } from './directives/border-card.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CouleursDirective,
+    BorderCardDirective
   ],
   imports: [
     BrowserModule
